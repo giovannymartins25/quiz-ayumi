@@ -15,7 +15,7 @@ export default function Home() {
       </motion.h1>
 
       <p className="text-lg text-pink-600 mb-8">
-        Fiz um quiz especial pra você. Clica aqui pra começar 😳💞
+        Fiz um quiz especial pra você. Clica aqui pra começar 💞
       </p>
 
       <Link

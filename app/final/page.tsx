@@ -34,7 +34,7 @@ export default function Final() {
       </motion.h1>
 
       <p className="text-lg text-pink-600 mb-2">
-        Você acertou <span className="font-bold">{acertos}</span> perguntas 🥺
+        Você acertou <span className="font-bold">{acertos}</span> perguntas 💌
       </p>
 
       <p className="text-xl text-pink-700 mt-4 mb-10">
