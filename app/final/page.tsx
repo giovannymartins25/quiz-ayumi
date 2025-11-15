@@ -1,14 +1,26 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Final() {
-  const search = useSearchParams();
-  const acertos = search.get("acertos");
+  const [acertos, setAcertos] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      setAcertos(params.get("acertos"));
+    }
+  }, []);
+
+  if (acertos === null) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-pink-600 text-xl">
+        Carregando...
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 via-pink-100 to-white text-center p-6 relative">
@@ -30,7 +42,6 @@ export default function Final() {
         <br />Eu amo muito você, minha Japa ❤️‍🩹
       </p>
 
-      {/* Botão de jogar de novo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +55,6 @@ export default function Final() {
         </Link>
       </motion.div>
 
-      {/* Corações flutuando */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(25)].map((_, i) => (
           <motion.div
