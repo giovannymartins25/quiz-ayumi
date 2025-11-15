@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Final() {
-  const [acertos, setAcertos] = useState(null);
+  const [acertos, setAcertos] = useState<string | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
-      setAcertos(params.get("acertos"));
+      const value = params.get("acertos");
+      setAcertos(value);
     }
   }, []);
 
@@ -24,7 +25,6 @@ export default function Final() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 via-pink-100 to-white text-center p-6 relative">
-      
       <motion.h1
         className="text-4xl font-bold text-pink-700 mb-4"
         initial={{ opacity: 0, y: -20 }}
