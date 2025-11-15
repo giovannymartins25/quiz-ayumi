@@ -25,7 +25,7 @@ export default function Home() {
         Começar o Quiz 💘
       </Link>
 
-      {/* Corações subindo */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
