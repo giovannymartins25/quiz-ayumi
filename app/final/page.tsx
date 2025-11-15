@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -9,7 +11,8 @@ export default function Final() {
   const acertos = search.get("acertos");
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 via-pink-100 to-white text-center p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 via-pink-100 to-white text-center p-6 relative">
+      
       <motion.h1
         className="text-4xl font-bold text-pink-700 mb-4"
         initial={{ opacity: 0, y: -20 }}
